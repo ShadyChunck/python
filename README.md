@@ -1,0 +1,1 @@
+Learning Python everyday by coding everyday and try to do new things, mastering the language. Basically, a Python Coding Playground.
