@@ -159,11 +159,9 @@
 # el contador llegue a 0. Después del bucle (fuera de la indentación), imprime "¡Despegue!".
 print("Exercise 1")
 counter = 5
-while True:
+while counter > 0:
     print(counter)
     counter -= 1
-    if counter == 0:
-        break
 
 print("Despegue!")
 
@@ -184,5 +182,45 @@ for grade in grades:
 # ahorrar $30. Crea una variable ahorro = 0. Utiliza un bucle while que se ejecute mientras el
 # ahorro sea menor a 150. En cada iteración (cada mes), suma 30 al ahorro e imprime un mensaje que
 # diga "Ahorro actual: [cantidad]". Cuando el bucle termine, imprime "¡Meta alcanzada!".
+print("Exercise 3")
+savings = 0
+while savings < 150:
+    savings += 30
+    print("Money saved:", savings)
 
+print("Goal achieved")
+
+# Exercise 4
+# Estás auditando los registros de acceso a un servidor. Tienes una lista de usuarios que intentaron
+# ingresar. Tu sistema debe revisar uno por uno, pero si detecta que el usuario "hacker99" intentó
+# entrar, debe detener completamente la revisión de inmediato para levantar una alerta. Usa un bucle
+# for para recorrer la lista de usuarios. En cada iteración, imprime "Revisando a:
+# [nombre de usuario]". Sin embargo, si el usuario es "hacker99", imprime "¡ALERTA DE INTRUSO!"
+# y utiliza la instrucción break para detener el bucle por completo.
+print("Exercise 4")
+users = ["ana_perez", "dev_master", "hacker99", "admin_root", "carlos_88"]
+for user in users:
+    if user != "hacker99":
+        print("Checking user", user)
+    else:
+        print("INTRUDER ALERT!")
+        break
+
+# Exercise 5
+# Tienes una lista con los precios de los productos vendidos hoy. Por un error del sistema,
+# algunos precios se registraron como 0 o con números negativos. Necesitas calcular la suma total de
+# las ventas, pero ignorando los valores inválidos. Crea una variable total = 0. Recorre la lista
+# precios con un bucle for. Si el precio es menor o igual a 0, utiliza continue para saltar a la
+# siguiente iteración sin sumarlo. Si es un precio válido, súmalo a la variable total. Al final,
+# imprime el valor de total.
+print("Exercise 5")
+prices = [120, -15, 340, 0, 89, -5, 200]
+total = 0
+for price in prices:
+    if price <= 0:
+        continue
+    else:
+        total += price
+
+print("Final Total:", total)
 
