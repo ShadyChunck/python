@@ -12,4 +12,20 @@ print(fruits[-1]) # Negative numbers starting from minus one represents the last
 print(fruits[-2]) # It prints "banana"
 
 # List Methods
-# 
+# .append(element) | Adds an element to the list.
+# .insert(index, element) | Inserts an element to a specific position of the list. Position starts at 0.
+fruits.insert(1, "grape")
+print("After .insert and before .pop")
+print(fruits)
+# .remove(element) | Removes the first occurrence of the specified element from a list.
+# .pop(index) | Eliminate and returns the element of the specific position of the list.
+pop_value = fruits.pop() # By default, .pop() eliminates and gets the value of the last element of the list unless it specifies the position.
+print("After .pop")
+print(fruits)
+print(pop_value) # The value that .pop() eliminates can also be saved into a variable.
+# .sort() | Sort the values ​​in the list in ascending order.
+fruits.sort()
+print(fruits)
+# .reverse() | Reverses the order of the elements in the list.
+fruits.reverse()
+print(fruits)
