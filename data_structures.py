@@ -29,3 +29,9 @@ print(fruits)
 # .reverse() | Reverses the order of the elements in the list.
 fruits.reverse()
 print(fruits)
+
+# Comprehension Lists
+# Is a concise way to create new lists based off an existing sequence.
+numbers = [1, 2, 3, 4, 5]
+squared = [x ** 2 for x in numbers if x % 2 == 0]
+print(squared)
