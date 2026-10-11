@@ -35,3 +35,19 @@ print(fruits)
 numbers = [1, 2, 3, 4, 5]
 squared = [x ** 2 for x in numbers if x % 2 == 0]
 print(squared)
+
+print("--------Tuples----------")
+# Tuples
+# It's a data structure that is unmutable (it's value cannot change after it's creation.)
+# It saves a collection of elements. Unlike lists, the contents of a tuple are enclosed within parentheses ( ).
+
+tuple = (1, 2)
+print(tuple[0])
+print(tuple[1])
+
+# Tuple Methods
+
+# .count(element) | Returns the number of times a certain element apears en the tuple.
+# .index(element) | Returns the index of the first appearance of an element in the tuple.
+# .len(tuple) | Returns the length of the tuple.
+print(len(tuple))
