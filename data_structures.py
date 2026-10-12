@@ -12,7 +12,7 @@ print(fruits[-1]) # Negative numbers starting from minus one represents the last
 print(fruits[-2]) # It prints "banana"
 
 # List Methods
-# .append(element) | Adds an element to the list.
+# .append(element) | Adds an element to the list and inserts it to the last position of the list.
 # .insert(index, element) | Inserts an element to a specific position of the list. Position starts at 0.
 fruits.insert(1, "grape")
 print("After .insert and before .pop")
@@ -51,3 +51,4 @@ print(tuple[1])
 # .index(element) | Returns the index of the first appearance of an element in the tuple.
 # .len(tuple) | Returns the length of the tuple.
 print(len(tuple))
+print(len("Hola"))
