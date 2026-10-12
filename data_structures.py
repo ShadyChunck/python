@@ -35,13 +35,16 @@ print(fruits)
 numbers = [1, 2, 3, 4, 5]
 squared = [x ** 2 for x in numbers if x % 2 == 0]
 print(squared)
+booleans = [x % 2 == 0 for x in [1, 2, 3]]
+print(booleans)
 
 print("--------Tuples----------")
 # Tuples
 # It's a data structure that is unmutable (it's value cannot change after it's creation.)
 # It saves a collection of elements. Unlike lists, the contents of a tuple are enclosed within parentheses ( ).
 
-tuple = (1, 2)
+tuple = (1, 2, 3, 4, 5)
+print("Tuple:", tuple)
 print(tuple[0])
 print(tuple[1])
 
@@ -52,3 +55,40 @@ print(tuple[1])
 # .len(tuple) | Returns the length of the tuple.
 print(len(tuple))
 print(len("Hola"))
+print("Index of a tuple:", tuple.index(4))
+
+# Exercises
+# Exercise 1.
+print("Lists Exercises")
+print("Exercise 1.")
+inventory = ["Notebook", "Pencil", "Eraser"]
+print(inventory[0])
+print(inventory[-1])
+
+# Exercise 2.
+print("Exercise 2.")
+employees = ["Ana", "Carlos", "Beatriz", "David"]
+employees.remove("Carlos")
+employees.append("Elena")
+print(employees)
+
+# Exersice 3.
+print("Exercise 3.")
+grades = [45, 12, 88, 55, 92]
+grades.sort()
+lowest_grade = grades.pop(0)
+print(lowest_grade)
+print(grades)
+
+# Exercise 4.
+print("Exercise 4.")
+prices = [15, 45, 80, 120, 30, 55, 9]
+premium_prices = [x for x in prices if x >= 50]
+print(premium_prices)
+
+# Exercise 5.
+print("Exercise 5.")
+chores = ["Barrer", "Trapear", "Barrer", "Lavar", "Barrer"]
+new_chores = [chore for chore in chores if chore != "Barrer"]
+new_chores.insert(0, "Limpiar ventanas")
+print(new_chores)
