@@ -38,26 +38,7 @@ print(squared)
 booleans = [x % 2 == 0 for x in [1, 2, 3]]
 print(booleans)
 
-print("--------Tuples----------")
-# Tuples
-# It's a data structure that is unmutable (it's value cannot change after it's creation.)
-# It saves a collection of elements. Unlike lists, the contents of a tuple are enclosed within parentheses ( ).
-
-tuple = (1, 2, 3, 4, 5)
-print("Tuple:", tuple)
-print(tuple[0])
-print(tuple[1])
-
-# Tuple Methods
-
-# .count(element) | Returns the number of times a certain element apears en the tuple.
-# .index(element) | Returns the index of the first appearance of an element in the tuple.
-# .len(tuple) | Returns the length of the tuple.
-print(len(tuple))
-print(len("Hola"))
-print("Index of a tuple:", tuple.index(4))
-
-# Exercises
+# Lists Exercises
 # Exercise 1.
 print("Lists Exercises")
 print("Exercise 1.")
@@ -92,3 +73,51 @@ chores = ["Barrer", "Trapear", "Barrer", "Lavar", "Barrer"]
 new_chores = [chore for chore in chores if chore != "Barrer"]
 new_chores.insert(0, "Limpiar ventanas")
 print(new_chores)
+
+print("--------Tuples----------")
+# Tuples
+# It's a data structure that is unmutable (it's value cannot change after it's creation.)
+# It saves a collection of elements. Unlike lists, the contents of a tuple are enclosed within parentheses ( ).
+
+tuple = (1, 2, 3, 4, 5)
+print("Tuple:", tuple)
+print(tuple[0])
+print(tuple[1])
+
+# Tuple Methods
+
+# .count(element) | Returns the number of times a certain element appears en the tuple.
+# .index(element) | Returns the index of the first appearance of an element in the tuple.
+# .len(tuple) | Returns the length of the tuple.
+print(len(tuple))
+print(len("Hola"))
+print("Index of a tuple:", tuple.index(4))
+
+# Tuple Exercises.
+# Exercise 1.
+# Situación: Estás desarrollando un GPS y necesitas almacenar las coordenadas exactas de un destino.
+# Tu tarea:
+# Crea una tupla llamada destination que contenga los números 40.7128 y -74.0060.
+# Imprime en consola el primer número usando índices positivos.
+# Imprime en consola el segundo número usando índices negativos.
+print("Exercise 1.")
+destination = (40.7128, -74.0060)
+print(f"{destination[0]}, {destination[1]}")
+
+# Exercise 2.
+# Situación: Una base de datos te devuelve un registro de un empleado en formato de tupla. Necesitas separar esa información para trabajar con ella.
+# Tu tarea: Dada la tupla employee_record = (105, "Sarah Connor", "IT")
+# En una sola línea de código, "desempaqueta" esta tupla en tres variables con nombres descriptivos en inglés.
+# Imprime únicamente la variable que contiene el departamento ("IT").
+print("Exercise 2.")
+employee_record = (105, "Sarah Connor", "IT")
+id, name, department = employee_record
+print(department)
+
+# Exercise 3.
+# Situación: Tienes los resultados de una encuesta rápida de satisfacción del 1 al 5.
+# Tu tarea: Dada la tupla survey_results = (5, 4, 3, 5, 2, 5, 4, 1, 5)
+# Utiliza un método de las tuplas para averiguar cuántas veces los usuarios calificaron con un 5 y guarda ese valor en una variable.
+# Utiliza otro método para encontrar en qué índice (posición) aparece el primer 1.
+# Imprime ambos resultados.
+print("Exercise 3.")
