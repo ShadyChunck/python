@@ -152,7 +152,7 @@ print(f"The server IP is {server_data[2][1]}")
 
 # Dictionaries
 print("---------Dictionaries----------")
-# Is a mutable data structure that saves a collection of key-value information and it doesn't have order.
+# Is a mutable data structure that saves a collection of key-value information in order (It doesn't have an order before Python 3.7).
 # Each element in a dictionary has it's own unique key with their value.
 # Dictionaries uses curly braces {} and the key-values are seperated by comas.
 # An examole of a dictionary:
@@ -165,6 +165,7 @@ print(person["name"])
 print(person["age"])
 print(person["city"])
 print(person.get("name")) # The function get() obtains the value of the inserted key word.
+# Unlike "person[keyword]", this function returns None as a value if the keyword inserted was not found.
 
 # Dictionary Methods.
 # keys() | Returns a view of all the keys of a dictionary.
