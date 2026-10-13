@@ -177,3 +177,94 @@ print(person.items())
 # update(other_dictionary) | Updates the dictionary with the key-value elements of another dictionary.
 person.update({"language": "Python"})
 print(person)
+
+# With dictionaries you can also add individual key-values.
+car = {"brand": "Toyota", "year": 2020}
+print(car)
+# If the key doesn't exist, it creates it and adds it to the last part of the dictionary.
+car["color"] = "Red"
+print(car)
+# If the key does exist, it overwrite it's value
+car["year"] = 2022
+print(car)
+# It can also use some lists/tuple methods
+print(car.pop("year"))
+# It eliminates it directly from the memory
+del car["color"]
+
+# There can also be dictionaries inside of dictionaries
+user = {
+    "username": "coder_99",
+    "social_media": { # Dictionary called "social_media"
+        "twitter": "@coder99",
+        "github": "coder99-dev"
+    },
+    "languages": ["Python", "JavaScript"]
+}
+
+print(user["social_media"]["github"]) # Prints coder99-dev
+print(user["languages"][0])    # Prints Python
+
+# To access nested dictionaries, you must chain the bracket notations sequentially.
+
+# Dictionary Exercises
+print("----Dictionary Exercises----")
+# Exercise 1
+print("Exercise 1")
+# You need to create a simple contact entry for a user.
+# Create a dictionary named contact with the following key-value pairs:
+# "name": "Alice"
+# "phone": "555-1234"
+# "city": "New York"
+
+# Print the value associated with the "phone" key.
+contact = {"name": "Alice", "phone": "555-1234", "city": "New York"}
+print(contact["phone"])
+
+# Exercise 2
+print("Exercise 2")
+# A user's profile needs to be updated with new information.
+# Given the dictionary user_profile = {"username": "coder99", "level": 10}
+# Add a new key "email" with the value "coder99@email.com".
+# Update the value of the "level" key to 11.
+
+# Print the updated user_profile dictionary.
+user_profile = {"username": "coder99", "level": 10}
+print(f"Before: {user_profile}")
+user_profile.update({"email": "coder99@email.com", "level": 11})
+print(f"After {user_profile}")
+
+# Exercise 3
+print("Exercise 3")
+# You are fetching configuration settings for an application, but some settings might be missing.
+# Given the dictionary app_config = {"theme": "dark", "language": "en"}
+# Use the appropriate dictionary method to retrieve the value of the key "volume".
+# Ensure that if "volume" does not exist, the method returns the integer 50 instead of raising an error or returning None.
+# Store the result in a variable named current_volume and print it.
+app_config = {"theme": "dark", "language": "en"}
+print(f"Current app_config: {app_config}")
+current_volume = app_config.get("volume", 50)
+print(f"\"Updated\" config: {app_config}.\nCurrent volume: {current_volume}")
+
+# Exercise 4
+print("Exercise 4")
+# You have a dictionary containing the scores of students in a class. You need to print out a specific format for the report card.
+# Given the dictionary scores = {"Math": 85, "Science": 92, "History": 78}
+# Use a for loop to iterate through the dictionary.
+# In each iteration, print a string formatted exactly like this: "Subject: [key], Score: [value]". (Hint: You will need to access both keys and values simultaneously).
+scores = {"Math": 85, "Science": 92, "History": 78}
+for key, value in scores.items():
+    print(f"Subject: {key}, Score: {value}")
+
+# Exercise 5
+print("Exercise 5")
+# You are simulating a shopping cart. The cart contains items, but the user decided to remove one item.
+# Given the dictionary shopping_cart = {"laptop": 1200, "mouse": 25, "keyboard": 75}
+# Remove the "mouse" key-value pair from the dictionary using a method that also returns its value.
+# Store the returned value (the price of the mouse) in a variable called removed_item_price.
+# Print the removed_item_price.
+# Print the final shopping_cart dictionary to confirm the item is gone.
+shopping_cart = {"laptop": 1200, "mouse": 25, "keyboard": 75}
+print(f"Before: {shopping_cart}")
+removed_item_price = shopping_cart.pop("mouse")
+print(f"Removed item: {removed_item_price}\nFinal Shopping Cart: {shopping_cart}")
