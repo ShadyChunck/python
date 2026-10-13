@@ -268,3 +268,6 @@ shopping_cart = {"laptop": 1200, "mouse": 25, "keyboard": 75}
 print(f"Before: {shopping_cart}")
 removed_item_price = shopping_cart.pop("mouse")
 print(f"Removed item: {removed_item_price}\nFinal Shopping Cart: {shopping_cart}")
+
+# Sets
+print("----Set Lessons----")
