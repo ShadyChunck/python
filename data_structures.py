@@ -1,4 +1,5 @@
 # List
+print("Lists")
 # It's a mutable data structure that can hold a collection of items in order.
 # By mutable it means the list can be modified after it's creation.
 # It's important to remember that a list can have different data types and it's contents are closed within square brackets [ ].
@@ -121,3 +122,57 @@ print(department)
 # Utiliza otro método para encontrar en qué índice (posición) aparece el primer 1.
 # Imprime ambos resultados.
 print("Exercise 3.")
+survey_results = (5, 4, 3, 5, 2, 5, 4, 1, 5)
+survey_five_counts = survey_results.count(5)
+survey_first_one = survey_results.index(1)
+print(f"The number 5 appeared {survey_five_counts} times and the first number 1 of the tuple has the index number {survey_first_one}")
+
+# Exercise 4.
+# Situación: Tienes un registro de temperaturas tomadas cada hora. Sabes que hubo una caída a 15 grados, pero quieres ignorar las primeras 4 horas del día en tu búsqueda.
+# Tu tarea: Dada la tupla temperatures = (18, 16, 15, 19, 20, 15, 21, 15, 22)
+# Utiliza el método .index() para encontrar el número 15, pero configura el método para que comience a buscar a partir del índice 4 en adelante.
+# Imprime la posición encontrada.
+print("Exercise 4.")
+temperatures = (18, 16, 15, 19, 20, 15, 21, 15, 22)
+print(f"The temperature fall of 15 degrees happened at the {temperatures.index(15, 4) + 1}th hour, being in the index {temperatures.index(15, 4)}")
+
+# Exercise 5.
+# Situación: Estás trabajando con una API que te devuelve información de un servidor en forma de "tuplas anidadas" (una tupla dentro de otra tupla).
+# Tu tarea: Dada la siguiente estructura:
+# server_data = ("SVR-01", "Active", ("192.168.0.1", "10.0.0.5"))
+print("Exercise 5.")
+server_data = ("SVR-01", "Active", ("192.168.0.1", "10.0.0.5"))
+print(f"The server IP is {server_data[2][1]}")
+# The first square bracket [2] indicates the principal index order of the array.
+#    0          1                   2 (Considered one because both of the ip's are in the same parenthesis)
+# "SVR-01", "Active", ("192.168.0.1", "10.0.0.5")
+# The second square bracket [1] represents the index of the child tuple that is inside of the father tuple
+#        0           1
+# "192.168.0.1", "10.0.0.5"
+
+# Dictionaries
+print("---------Dictionaries----------")
+# Is a mutable data structure that saves a collection of key-value information and it doesn't have order.
+# Each element in a dictionary has it's own unique key with their value.
+# Dictionaries uses curly braces {} and the key-values are seperated by comas.
+# An examole of a dictionary:
+
+person = {"name": "Sam", "age": 25, "city": "Madrid"}
+
+# To access the values of a dictionary, you need yo use the key word between brackets.
+
+print(person["name"])
+print(person["age"])
+print(person["city"])
+print(person.get("name")) # The function get() obtains the value of the inserted key word.
+
+# Dictionary Methods.
+# keys() | Returns a view of all the keys of a dictionary.
+print(person.keys())
+# values() | Returns a view of all the values of a dictionary.
+print(person.values())
+# items() | Returns a view of all the key-value elements of a dictionary.
+print(person.items())
+# update(other_dictionary) | Updates the dictionary with the key-value elements of another dictionary.
+person.update({"language": "Python"})
+print(person)
