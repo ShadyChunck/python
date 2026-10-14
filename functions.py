@@ -32,5 +32,6 @@ try:
     # Realizar operaciones con el archivo
 except FileNotFoundError:
     print("Error: Archivo no encontrado")
-finally:
-    archivo.close()  # Cerrar el archivo siempre, incluso si ocurre una excepción
+
+    
+print((not True) or (False and True))  # Cerrar el archivo siempre, incluso si ocurre una excepción
