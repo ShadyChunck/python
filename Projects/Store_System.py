@@ -45,6 +45,7 @@ def purchase_object():
             obj = input("\nWhich object you want to buy?\n")
             if player["gold"] >= store_catalog[obj][0]:
                 player["gold"] -= store_catalog[obj][0]
+                player_inventory.append(obj)
                 print(f"\n{obj} bought!\nGold updated: {player["gold"]}")
                 finish = True
         except KeyError:
