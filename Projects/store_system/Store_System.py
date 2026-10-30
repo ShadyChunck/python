@@ -4,7 +4,7 @@ name = input("Write your name: ")
 
 player = {
     "name": name,
-    "gold": 100
+    "gold": 25
 }
 
 player_inventory = []
@@ -26,7 +26,7 @@ def show_catalog():
 
 def see_inventory():
     if player_inventory == []:
-        print(f"You don't have nothing in your inventory.\n")
+        print(f"You don't have nothing in your inventory. Buy something from the catalog!\n")
     else:
         count = 0
         for obj in player_inventory:
@@ -42,12 +42,18 @@ def purchase_object():
         count += 1
     while finish != True:
         try:
-            obj = input("\nWhich object you want to buy?\n")
+            items = list(store_catalog.keys()) # Creates a list for the keys of the dictionary
+            option = int(input("\nWhich object you want to buy?\n"))
+            obj = items[option - 1] # Takes the string from the list the user chooses
+            # Compares users gold to the item cost 
             if player["gold"] >= store_catalog[obj][0]:
                 player["gold"] -= store_catalog[obj][0]
                 player_inventory.append(obj)
-                print(f"\n{obj} bought!\nGold updated: {player["gold"]}")
+                print(f"\n{player_inventory[-1]} bought!\nGold updated: {player["gold"]}")
                 finish = True
+            else:
+                print(f"You don't have enough money to buy the {obj}\n")
+                break
         except KeyError:
             print("You must write the same exact name of the object. No numbers allowed.\n")
     
