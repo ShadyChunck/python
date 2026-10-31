@@ -2,9 +2,12 @@ import os
 play = True
 name = input("Write your name: ")
 
+def clear():
+    os.system("cls")
+
 player = {
     "name": name,
-    "gold": 25
+    "gold": 72
 }
 
 player_inventory = []
@@ -45,24 +48,47 @@ def purchase_object():
             items = list(store_catalog.keys()) # Creates a list for the keys of the dictionary
             option = int(input("\nWhich object you want to buy?\n"))
             obj = items[option - 1] # Takes the string from the list the user chooses
+            clear()
             # Compares users gold to the item cost 
             if player["gold"] >= store_catalog[obj][0]:
                 player["gold"] -= store_catalog[obj][0]
+                store_catalog[obj][1] -= 1
                 player_inventory.append(obj)
-                print(f"\n{player_inventory[-1]} bought!\nGold updated: {player["gold"]}")
+                print(f"{player_inventory[-1]} bought!\nGold updated: {player["gold"]}\n")
                 finish = True
             else:
                 print(f"You don't have enough money to buy the {obj}\n")
                 break
-        except KeyError:
-            print("You must write the same exact name of the object. No numbers allowed.\n")
+        except ValueError:
+            print("You must write a number. No text allowed.\n")
+        except IndexError:
+            print("You must choose a number from the list.\n")
     
 def sell_item():
+    finish = False
     if player_inventory == []:
         print("There's nothing in your inventory. Please buy something!\n")
+    else:
+        while finish != True:
+            try:
+                count = 0
+                for ele in player_inventory:
+                    print(f"{count + 1}.- {ele}")
+                    count += 1
+                option = int(input("\nWhat Item do you want to sell?\n"))
+                obj = player_inventory[option - 1]
+                player['gold'] += store_catalog[obj][0]
+                clear()
+                print(f"{obj} selled! {store_catalog[obj][0]} gold obtained.")
+                print(f"Updated gold: {player['gold']}\n")
+                del player_inventory[option - 1]
+                finish = True
+            except ValueError:
+                print("You must insert an integer number like 1. Not decimals allowed.\n")
+            except IndexError:
+                print("You must choose a number from the list.")
 
-def clear():
-    os.system("cls")
+
 
 print("Welcome to our store. What would you like to do?")
 while play:
@@ -83,8 +109,8 @@ while play:
                     # play = False
                 case 4:
                     clear()
-                    print("Cuatro")
-                    play = False
+                    sell_item()
+                    #play = False
                 case 5:
                     clear()
                     print("Bye bye!")
