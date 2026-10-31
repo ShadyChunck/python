@@ -57,7 +57,9 @@ def purchase_object():
         except KeyError:
             print("You must write the same exact name of the object. No numbers allowed.\n")
     
-
+def sell_item():
+    if player_inventory == []:
+        print("There's nothing in your inventory. Please buy something!\n")
 
 def clear():
     os.system("cls")
